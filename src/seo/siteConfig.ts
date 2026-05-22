@@ -128,3 +128,72 @@ export const HOME_FAQS: FaqItem[] = [
       'Major Western apps may be inaccessible in mainland China, so travellers often need a VPN or roaming eSIM strategy to stay connected.',
   },
 ];
+
+export const CHINA_TOURS_FROM_AU_FAQS: FaqItem[] = [
+  {
+    question: 'Do you arrange international flights from Australia?',
+    answer:
+      'Our focus is mainly on China-side travel arrangements such as itineraries, hotels, guides, transfers, rail planning, and on-the-ground support. International flights can be arranged separately.',
+  },
+  {
+    question: 'Are your China tours private or group-based?',
+    answer:
+      'VisitChina.au focuses on private customised itineraries for Australian travellers, with private guides, drivers, and flexible day-to-day pacing.',
+  },
+  {
+    question: 'Can you plan family-friendly China trips?',
+    answer:
+      'Yes. Family-friendly planning is part of the service, including pacing, transfers, hotel selection, and destination combinations that suit children and multi-generational travel.',
+  },
+  {
+    question: 'What kind of support do travellers receive in China?',
+    answer:
+      'Travellers receive Australia-based planning before departure plus local support in China for practical coordination during the trip.',
+  },
+];
+
+export const PRIVATE_CHINA_TOURS_FAQS: FaqItem[] = [
+  {
+    question: 'What makes a private China tour different from a standard group tour?',
+    answer:
+      'A private China tour is built around your own route, pace, and preferences, with private guides and transfers instead of a fixed large-group schedule.',
+  },
+  {
+    question: 'Can the itinerary be adjusted for families or slower pacing?',
+    answer:
+      'Yes. Private itineraries can be planned around children, older travellers, multi-generational groups, or anyone who wants a more comfortable daily pace.',
+  },
+  {
+    question: 'Do private China tours include shopping stops or factory visits?',
+    answer:
+      'No. VisitChina.au focuses on private touring without forced shopping stops, factory detours, or unnecessary time fillers.',
+  },
+  {
+    question: 'What parts of the trip does VisitChina.au mainly arrange?',
+    answer:
+      'VisitChina.au mainly arranges China-side travel services such as itinerary planning, guides, transfers, hotels, rail coordination, and local support in China.',
+  },
+];
+
+export const FIRST_TIME_CHINA_GUIDE_FAQS: FaqItem[] = [
+  {
+    question: 'Do Australians currently need a visa for a short trip to China?',
+    answer:
+      'Australian travellers should always check the latest official entry requirements before departure. The site provides practical guidance on current visa-free travel information, but official government sources should be the final reference.',
+  },
+  {
+    question: 'Is China difficult for first-time visitors to navigate?',
+    answer:
+      'For first-time visitors, China can feel unfamiliar because payments, apps, transport systems, and local travel routines work differently from Australia. Good pre-trip planning usually makes the experience much smoother.',
+  },
+  {
+    question: 'Do I need Alipay or local apps before travelling?',
+    answer:
+      'Setting up payment and connectivity tools before departure is strongly recommended. Services such as Alipay, local rail planning, and connectivity options can be confusing if left until arrival.',
+  },
+  {
+    question: 'What does VisitChina.au mainly arrange for first-time travellers?',
+    answer:
+      'VisitChina.au mainly arranges China-side travel services such as itinerary planning, private guides, transfers, hotels, rail coordination, and local support in China.',
+  },
+];

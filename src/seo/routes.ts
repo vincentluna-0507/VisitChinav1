@@ -1,6 +1,6 @@
 import { DESTINATIONS, ITINERARIES, STYLE_DETAILS, TRAVEL_STYLES } from '../data.ts';
 import type { Destination, TravelStyleDetail } from '../types.ts';
-import { HOME_FAQS, type BreadcrumbItem, type FaqItem, SITE_NAME } from './siteConfig.ts';
+import { CHINA_TOURS_FROM_AU_FAQS, FIRST_TIME_CHINA_GUIDE_FAQS, HOME_FAQS, PRIVATE_CHINA_TOURS_FAQS, type BreadcrumbItem, type FaqItem, SITE_NAME } from './siteConfig.ts';
 
 export interface SeoRoute {
   path: string;
@@ -86,6 +86,27 @@ export const STATIC_ROUTES: SeoRoute[] = [
     `Terms of Service | ${SITE_NAME}`,
     'Read the VisitChina.au terms of service covering bookings, cancellations, and travel planning responsibilities.',
     [baseCrumb('Home', '/'), baseCrumb('Terms of Service', '/terms')],
+  ),
+  route(
+    '/china-tours-from-australia',
+    `China Tours from Australia | ${SITE_NAME}`,
+    'Private China tours from Australia with customised itineraries, local guides, hotels, transfers, high-speed rail planning and support for Australian travellers.',
+    [baseCrumb('Home', '/'), baseCrumb('China Tours from Australia', '/china-tours-from-australia')],
+    { faqItems: CHINA_TOURS_FROM_AU_FAQS },
+  ),
+  route(
+    '/private-china-tours',
+    `Private China Tours | ${SITE_NAME}`,
+    'Private China tours with customised itineraries, private guides, flexible pacing, transfers, hotels, high-speed rail planning and no forced shopping stops.',
+    [baseCrumb('Home', '/'), baseCrumb('Private China Tours', '/private-china-tours')],
+    { faqItems: PRIVATE_CHINA_TOURS_FAQS },
+  ),
+  route(
+    '/first-time-china-travel-guide',
+    `First-Time China Travel Guide for Australians | ${SITE_NAME}`,
+    'A practical first-time China travel guide for Australians covering visa-free entry, payments, transport, apps, itinerary planning and local travel support.',
+    [baseCrumb('Home', '/'), baseCrumb('First-Time China Travel Guide', '/first-time-china-travel-guide')],
+    { faqItems: FIRST_TIME_CHINA_GUIDE_FAQS },
   ),
 ];
 

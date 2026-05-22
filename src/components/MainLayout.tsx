@@ -22,6 +22,40 @@ const MainLayout: React.FC<LayoutProps> = ({ children }) => {
 
   // Restored to the full primary logo asset
   const LOGO_URL = "https://raw.githubusercontent.com/vincentluna-0507/VisitChinaImages/refs/heads/main/logo.png";
+  const footerGroups = [
+    {
+      title: 'China Travel Services',
+      links: [
+        { name: 'China Tours from Australia', path: '/china-tours-from-australia' },
+        { name: 'Private China Tours', path: '/private-china-tours' },
+        { name: 'Family China Tours', path: '/styles/family' },
+        { name: 'First-Time China Travel Guide', path: '/first-time-china-travel-guide' },
+        { name: 'Sample Itineraries', path: '/itineraries' },
+      ],
+    },
+    {
+      title: 'Travel Styles',
+      links: [
+        { name: 'Family China Tours', path: '/styles/family' },
+        { name: 'Nature Tours', path: '/styles/nature' },
+        { name: 'Culture Tours', path: '/styles/culture' },
+        { name: 'Food Tours', path: '/styles/food' },
+        { name: 'Relaxed Travel', path: '/styles/relaxed' },
+        { name: 'Local Life Experiences', path: '/styles/local-life' },
+        { name: 'Adventure & Active', path: '/styles/adventure' },
+      ],
+    },
+    {
+      title: 'Travel Support',
+      links: [
+        { name: 'China Visa Guide', path: '/visa-guide' },
+        { name: 'China Payment Help', path: '/payment-help' },
+        { name: 'Travel Insurance', path: '/insurance' },
+        { name: 'Terms of Service', path: '/terms' },
+        { name: 'Contact Us', path: '/contact' },
+      ],
+    },
+  ];
 
   return (
     <div className="flex flex-col min-h-screen">
@@ -111,48 +145,43 @@ const MainLayout: React.FC<LayoutProps> = ({ children }) => {
 
       <main className="flex-grow" id="main-content">{children}</main>
 
-      <footer className="bg-slate-900 text-white pt-20 pb-10">
+      <footer className="bg-slate-900 text-white pt-16 pb-8">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-16 mb-20">
-            <div className="col-span-1 md:col-span-1">
-               <Link to="/" className="flex items-center mb-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-5 gap-10 xl:gap-8 mb-14 items-start">
+            <div className="xl:col-span-1">
+               <Link to="/" className="flex items-center mb-6">
                 <img 
                   src={LOGO_URL} 
                   alt="VisitChina.au Logo" 
                   className="h-16 w-auto brightness-110" 
                 />
               </Link>
-              <p className="text-slate-400 text-sm leading-relaxed mb-6">
+              <p className="text-slate-400 text-sm leading-relaxed mb-5">
                 Specialising in private, high-quality China journeys for Australians. Local experts ensuring comfort and safety.
               </p>
               <div className="flex gap-4">
                 <span className="text-[10px] bg-slate-800 px-3 py-1 rounded-full text-slate-300 font-bold uppercase tracking-widest">ABN 43 694 026 616</span>
               </div>
             </div>
-            
-            <div>
-              <h4 className="text-white font-bold mb-8 uppercase tracking-widest text-xs text-slate-100">Explore</h4>
-              <ul className="space-y-4 text-sm text-slate-400">
-                <li><Link to="/itineraries" className="hover:text-emerald-400 transition-colors">Sample Itineraries</Link></li>
-                <li><Link to="/destinations" className="hover:text-emerald-400 transition-colors">Destinations</Link></li>
-                <li><Link to="/styles" className="hover:text-emerald-400 transition-colors">Travel Styles</Link></li>
-                <li><Link to="/contact" className="hover:text-emerald-400 transition-colors">Contact Us</Link></li>
-              </ul>
-            </div>
+
+            {footerGroups.map((group) => (
+              <div key={group.title}>
+                <h4 className="text-white font-bold mb-5 uppercase tracking-widest text-xs text-slate-100">{group.title}</h4>
+                <ul className="space-y-3 text-sm text-slate-400">
+                  {group.links.map((link) => (
+                    <li key={link.path}>
+                      <Link to={link.path} className="hover:text-emerald-400 transition-colors">
+                        {link.name}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
 
             <div>
-              <h4 className="text-white font-bold mb-8 uppercase tracking-widest text-xs text-slate-100">Support</h4>
+              <h4 className="text-white font-bold mb-5 uppercase tracking-widest text-xs text-slate-100">Connect</h4>
               <ul className="space-y-4 text-sm text-slate-400">
-                <li><Link to="/visa-guide" className="hover:text-emerald-400 transition-colors">30-Day Visa Guide</Link></li>
-                <li><Link to="/payment-help" className="hover:text-emerald-400 transition-colors">Payment Apps Help</Link></li>
-                <li><Link to="/insurance" className="hover:text-emerald-400 transition-colors">Travel Insurance</Link></li>
-                <li><Link to="/terms" className="hover:text-emerald-400 transition-colors">Terms of Service</Link></li>
-              </ul>
-            </div>
-
-            <div>
-              <h4 className="text-white font-bold mb-8 uppercase tracking-widest text-xs text-slate-100">Connect</h4>
-              <ul className="space-y-5 text-sm text-slate-400">
                 <li className="flex items-center gap-4 group">
                   <div className="w-8 h-8 rounded-full bg-slate-800 flex items-center justify-center group-hover:bg-emerald-800 transition-colors">
                     <Mail size={14} />
@@ -175,7 +204,7 @@ const MainLayout: React.FC<LayoutProps> = ({ children }) => {
             </div>
           </div>
           
-          <div className="border-t border-slate-800 pt-10 text-center flex flex-col md:flex-row justify-between items-center gap-4 text-[10px] text-slate-500 uppercase tracking-widest">
+          <div className="border-t border-slate-800 pt-8 text-center flex flex-col md:flex-row justify-between items-center gap-4 text-[10px] text-slate-500 uppercase tracking-widest">
             <p>&copy; {new Date().getFullYear()} VisitChina.au. All rights reserved.</p>
           </div>
         </div>

@@ -16,6 +16,9 @@ import VisaGuide from './pages/VisaGuidePage';
 import PaymentHelp from './pages/PaymentHelpPage';
 import Insurance from './pages/InsurancePage';
 import Terms from './pages/TermsPage';
+import ChinaToursFromAustraliaPage from './pages/ChinaToursFromAustraliaPage';
+import PrivateChinaToursPage from './pages/PrivateChinaToursPage';
+import FirstTimeChinaTravelGuidePage from './pages/FirstTimeChinaTravelGuidePage';
 
 // Scroll to top on route change
 const ScrollToTop = () => {
@@ -47,6 +50,9 @@ const App: React.FC = () => {
           <Route path="/payment-help" element={<PaymentHelp />} />
           <Route path="/insurance" element={<Insurance />} />
           <Route path="/terms" element={<Terms />} />
+          <Route path="/china-tours-from-australia" element={<ChinaToursFromAustraliaPage />} />
+          <Route path="/private-china-tours" element={<PrivateChinaToursPage />} />
+          <Route path="/first-time-china-travel-guide" element={<FirstTimeChinaTravelGuidePage />} />
         </Routes>
       </Layout>
     </Router>
