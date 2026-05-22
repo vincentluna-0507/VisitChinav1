@@ -1,0 +1,18 @@
+{
+  "redirects": [
+    {
+      "source": "/styles/kids",
+      "destination": "/styles/family",
+      "permanent": true
+    }
+  ],
+  "routes": [
+    {
+      "handle": "filesystem"
+    },
+    {
+      "src": "/.*",
+      "dest": "/index.html"
+    }
+  ]
+}
