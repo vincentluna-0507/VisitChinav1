@@ -1,6 +1,6 @@
 import { DESTINATIONS, ITINERARIES, STYLE_DETAILS, TRAVEL_STYLES } from '../data.ts';
 import type { Destination, TravelStyleDetail } from '../types.ts';
-import { CHINA_TOURS_FROM_AU_FAQS, FIRST_TIME_CHINA_GUIDE_FAQS, HOME_FAQS, PRIVATE_CHINA_TOURS_FAQS, type BreadcrumbItem, type FaqItem, SITE_NAME } from './siteConfig.ts';
+import { CHINA_TOURS_FROM_AU_FAQS, FAMILY_TOURS_FAQS, FIRST_TIME_CHINA_GUIDE_FAQS, HOME_FAQS, ITINERARIES_FAQS, PAYMENT_HELP_FAQS, PRIVATE_CHINA_TOURS_FAQS, VISA_GUIDE_FAQS, type BreadcrumbItem, type FaqItem, SITE_NAME } from './siteConfig.ts';
 
 export interface SeoRoute {
   path: string;
@@ -42,8 +42,9 @@ export const STATIC_ROUTES: SeoRoute[] = [
   route(
     '/itineraries',
     `China Itineraries for Australians | ${SITE_NAME}`,
-    'Browse sample China itineraries designed for Australian travellers, with private planning and flexible route ideas.',
+    'Sample China itineraries for Australian travellers, including private, family-friendly and first-time China travel routes with flexible pacing and local support.',
     [baseCrumb('Home', '/'), baseCrumb('Itineraries', '/itineraries')],
+    { faqItems: ITINERARIES_FAQS },
   ),
   route(
     '/destinations',
@@ -65,15 +66,17 @@ export const STATIC_ROUTES: SeoRoute[] = [
   ),
   route(
     '/visa-guide',
-    `China 30-Day Visa-Free Guide | ${SITE_NAME}`,
-    'Read the China 30-day visa-free guide for Australian passport holders, including entry basics and travel preparation notes.',
+    `China Visa-Free Travel Guide for Australians | ${SITE_NAME}`,
+    'A practical guide to China visa-free travel for Australians, covering 30-day visa-free entry, travel planning notes, documents, payments and itinerary support.',
     [baseCrumb('Home', '/'), baseCrumb('Visa Guide', '/visa-guide')],
+    { faqItems: VISA_GUIDE_FAQS },
   ),
   route(
     '/payment-help',
-    `China Payment Apps Help | ${SITE_NAME}`,
-    'Learn the basics of Alipay and WeChat Pay setup for Australian travellers visiting China.',
+    `China Payment Apps Guide for Australians | ${SITE_NAME}`,
+    'A practical guide to China payment apps for Australian travellers, covering Alipay, WeChat Pay, cards, cash, connectivity and trip preparation.',
     [baseCrumb('Home', '/'), baseCrumb('Payment Help', '/payment-help')],
+    { faqItems: PAYMENT_HELP_FAQS },
   ),
   route(
     '/insurance',
@@ -137,13 +140,14 @@ const styleRoute = (style: TravelStyleDetail): SeoRoute =>
 const familyStyleRoute = (): SeoRoute =>
   route(
     '/styles/family',
-    `Family China Travel Style | ${SITE_NAME}`,
-    'Family China travel style guide for Australians, covering child-friendly cities, comfortable pacing, and family-suitable experiences.',
+    `China Family Tours | ${SITE_NAME}`,
+    'Family-friendly China tours with customised itineraries, private guides, comfortable pacing, hotels, transfers and local support for Australian families.',
     [
       baseCrumb('Home', '/'),
       baseCrumb('Travel Styles', '/styles'),
-      baseCrumb('Family Travel', '/styles/family'),
+      baseCrumb('China Family Tours', '/styles/family'),
     ],
+    { faqItems: FAMILY_TOURS_FAQS },
   );
 
 const checkoutRoute = (id: string, title: string): SeoRoute =>

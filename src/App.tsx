@@ -8,6 +8,7 @@ import Destinations from './pages/Destinations';
 import DestinationDetail from './pages/DestinationDetail';
 import TravelStyles from './pages/TravelStyles';
 import StyleDetail from './pages/StyleDetail';
+import FamilyChinaToursPage from './pages/FamilyChinaToursPage';
 import Contact from './pages/Contact';
 import Checkout from './pages/Checkout';
 
@@ -40,6 +41,7 @@ const App: React.FC = () => {
           <Route path="/destinations" element={<Destinations />} />
           <Route path="/destinations/:id" element={<DestinationDetail />} />
           <Route path="/styles" element={<TravelStyles />} />
+          <Route path="/styles/family" element={<FamilyChinaToursPage />} />
           <Route path="/styles/kids" element={<Navigate to="/styles/family" replace />} />
           <Route path="/styles/:id" element={<StyleDetail />} />
           <Route path="/contact" element={<Contact />} />
